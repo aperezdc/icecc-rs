@@ -1,0 +1,19 @@
+[package]
+name = "icecc"
+version = "0.1.0"
+authors = ["Adrian Perez de Castro <aperez@igalia.com>"]
+
+[dependencies]
+libicecc-sys = { git = "https://github.com/aperezdc/libicecc-sys" }
+libc = "0.2"
+clap = { version = "2.26", optional = true }
+structopt = { version = "0.1", optional = true }
+structopt-derive = { version = "0.1", optional = true }
+
+[features]
+default = []
+examples = ["clap", "structopt", "structopt-derive"]
+
+[[example]]
+name = "monitor"
+required-features = ["examples"]

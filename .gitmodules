@@ -1,0 +1,3 @@
+[submodule "libicecc-sys"]
+	path = libicecc-sys
+	url = https://github.com/aperezdc/libicecc-sys
