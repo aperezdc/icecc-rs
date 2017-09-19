@@ -47,8 +47,7 @@ impl From<Language> for sys::CompileJobLanguage
 }
 
 
-// TODO: Make this trait private.
-pub trait AsPtr {
+trait AsPtr {
     type Output;
     fn as_ptr(&self) -> *mut Self::Output;
 }
@@ -262,7 +261,7 @@ macro_rules! accessors {
 pub mod msg {
     use super::*;
 
-    pub trait Base: AsPtr {
+    pub(super) trait Base: AsPtr {
         fn as_raw_ptr(&self) -> *mut sys::Msg {
             self.as_ptr() as *mut sys::Msg
         }
